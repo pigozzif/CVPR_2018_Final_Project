@@ -1,7 +1,7 @@
 # CVPR_2018_Final_Project
 This repository hosts the material for the final project of the Computer Vision and Pattern Recognition course, offered at University of Trieste in the academic year 2018/2019. All the scripts have been written in the Python programming language. In particular, the following dependencies have been employed: `opencv-python`, `sklearn`, `numpy`, `scipy`.
 ## Problem Statement
-The goal of this project is to implement an image classifier that is able to distinguish between different scenes. The approach adopted is the Bag-of-Words (BoW) model. The dataset to carry out the experiments (from [Lazebnik et al., (2006)]) has been provided and consists of 15 scene categories (office, kitchen, living room, bedroom, store, industrial, tall building, inside city, street, highway, coast, open country, mountain, forest, suburb). As we can see, the scenes can be conceptually "clustered" in three groupings: outdoors (e.g. coast, open country, mountain, forest), indoors e.g. (office, kitchen, store) and hybrid scenes (e.g. suburb). This distinction will become more evident as we present the results. Images were split between a 1500-sized training set and a 3000-sized test set.
+The goal of this project is to implement an image classifier that is able to distinguish between different scenes. The approach adopted is the Bag-of-Words (BoW) model. The dataset to carry out the experiments (from [Lazebnik et al., (2006)]) has been provided and consists of 15 scene categories (office, kitchen, living room, bedroom, store, industrial, tall building, inside city, street, highway, coast, open country, mountain, forest, suburb). As we can see, the scenes can be conceptually "clustered" in three groupings: outdoors (e.g. coast, open country, mountain, forest), indoors e.g. (office, kitchen, store) and hybrid scenes (e.g. suburb). This distinction will become more evident as we present the results. Images were split between a 1500-sized training set and a 2985-sized test set.
 ## Approach and Implementation
 The following tasks have been tackled and accomplished:
 ### 1. Visual Vocabulary
@@ -23,7 +23,7 @@ Following the ideas of [Lazebnik et al., 2006], I implemented the SPK. Each imag
 ## Results
 
 1. Here are the results for the **nearest-neighbor** classifier described at point 3 of the previous paragraph, including a confusion matrix computed for k=50 visual words.
-
+![alt text]()
 2. Here are the results for the linear SVM classifier illustrated at point 4 of the previous paragraph, including a confusion matrix computed for k=50 visual words.
 
 
