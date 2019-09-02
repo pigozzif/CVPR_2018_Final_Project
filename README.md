@@ -23,7 +23,7 @@ Following the ideas of [Lazebnik et al., 2006], I implemented the SPK. Each imag
 ## Results
 
 1. Here are the results for the **nearest-neighbor** classifier described at point 3 of the previous paragraph, including a confusion matrix computed for k=50 visual words.
-![alt text]()
+![alt text](https://github.com/pigozzif/CVPR_2018_Final_Project/blob/master/images/KNN50.png)
 2. Here are the results for the linear SVM classifier illustrated at point 4 of the previous paragraph, including a confusion matrix computed for k=50 visual words.
-
+![alt text](https://github.com/pigozzif/CVPR_2018_Final_Project/blob/master/images/linearSVC50.png)
 
