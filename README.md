@@ -50,20 +50,21 @@ As we can see, the linear SVM does a pretty decent job at classifying different 
 |100|0.54     |
 |200|0.55     |
 As we can see, this kernel seems to squeeze out a lot of performance from the SVM mechanism and consistently outperforms the simpler linear kernel. Indeed, this has been my top performer, with an astonishing 55% of accuracy at k=200. Notice the big jump in performance going from k=25 to k=50.
-4. Here are the results for the **soft-assigment** rule discussed at point 6.
+4. Here are the results for the **soft-assigment** rule discussed at point 6, including a confusion matrix computed for k=50 visual words and normalized with respect to the true class.
+![alt text](https://github.com/pigozzif/CVPR_2018_Final_Project/blob/master/images/soft50.png)
 |k  | Accuracy|
 |---|--------:|
 |25 |0.48     |
 |50 |0.45     |
 |100|0.47     |
 |200|0.51     |
-As we can see, this approach consistently outranks the linear SVM classifier in terms of performance (even if computing the kernel many times impacted the time of computation). In fact, this turned out to be the top performer for k=25 beyond any doubt, outpacing the chisquared kernel by 5 percentage points. As a result, we can conclude that the intuition behind allowing each descriptor to contribute to multiple bins in a distance-weighted fashion was a winning one.
+As we can see, this approach consistently outranks the linear SVM classifier in terms of performance (even if computing the kernel many times impacted the time of computation). In fact, this turned out to be the top performer for k=25 beyond any doubt, outpacing the chisquared kernel by 5 percentage points. As a result, we can conclude that the intuition behind allowing each descriptor to contribute to multiple bins in a distance-weighted fashion was a winning one. Interestingly enough, if we compare this confusion matrix with that for the linear SVM, we discover that this approach abandons the unwanted preference for predicting "bedroom". 
 5. Here are the results for the **spatial pyramid kernel** analyzed at point 7.
 |k  | Accuracy|
-|---|--------:|
-|25 |0.41     |
-|50 |0.46     |
-|100|0.48     |
-|200|0.52     |
+|----|--------:|
+|25  |0.41     |
+|50  |0.46     |
+|100 |0.48     |
+|200 |0.52     |
 As we can see, even this solution seems to deliver pretty good performance. As expected, the intuition behind the SPK was not a wrong one, and augmenting the plain BoW approach with a notion of location helps us achieving better results.
 
