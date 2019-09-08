@@ -25,39 +25,39 @@ In all our experiments, the baseline is given by the performance of a classifier
 NOTE: some of the plots have the "predicted class" axis label cut. Nevertheless, I believe this is sort of implicit and the plots still make sense.
 1. Here are the results for the **nearest neighbor** classifier described at point 3 of the previous paragraph, including a confusion matrix computed for k=50 visual words and normalized with respect to the true class.
 ![alt text](https://github.com/pigozzif/CVPR_2018_Final_Project/blob/master/images/KNN50.png)
-|k  | Accuracy|
-|---|--------:|
-|25 |0.24     |
-|50 |0.26     |
-|100|0.24     |
-|200|/        |
+| k     | Accuracy |
+|-------|---------:|
+| 25    | 0.24     |
+| 50    | 0.26     |
+| 100   | 0.24     |
+| 200   | /        |
 As we can see, a nearest-neighbor classifier performs quite better than a trivial one, meaning that some learning has actually taken place. On the other hand, we should not think this is a really good classifier, since the accuracy score leaves a lot of room for improvement. At the same time, we see that a couple of "outstanding" classes (forest and suburb) are easily recognized by the algorithm, while for a big portion of the remaining classes the behavior seems to be rather "stochastic". Notice that the distance metric used to find the nearest neighbor has been the Earth Mover's Distance, that is very suitable at comparing histograms as we know. Other metrics have been tried (Euclidean, Manhattan, ...) yielding worse results, which have been omitted for brevity.
 Notice that results for k=200 were not produced, since the evaluation of the EMD distance among histograms turned out to require an overwhelming amount of hours. In fact, according to the OpenCV documentation, computing the EMD requires solving a linear programming problem whose complexity is exponential in the number of elements to match (being it 2xk) in the worst case. Still, we can speculate that performance would not have been so good.
 2. Here are the results for the **linear SVM** classifier illustrated at point 4 of the previous paragraph, including a confusion matrix computed for k=50 visual words and normalized with respect to the true class.
 ![alt text](https://github.com/pigozzif/CVPR_2018_Final_Project/blob/master/images/linearSVC50.png)
-|k  | Accuracy|
-|---|--------:|
-|25 |0.38     |
-|50 |0.39     |
-|100|0.43     |
-|200|0.45     |
+| k     | Accuracy |
+|-------|---------:|
+| 25    | 0.38     |
+| 50    | 0.39     |
+| 100   | 0.43     |
+| 200   | 0.45     |
 As we can see, the linear SVM does a pretty decent job at classifying different scenes, jumping by more or less 14 percentage points over the KNN classifier in terms of accuracy. Of course, we are not really surprised by this result, since Support Vector Machines are a much more sophisticated tool than a trivial nearest-neighbor search. Predictions start to accumulate on the main diagonal (denoting success), and we witness a very decent performance for outdoors scenery (like coast, forest, highway, mountain, suburb). Intuitively, indoors turn out tough to classify and in particular to distinguish, since misclassifications are strong between them.
 3. Here are the results for the SVM with **chisquared** kernel illustrated at point 5.
-|k  | Accuracy|
-|---|--------:|
-|25 |0.43     |
-|50 |0.51     |
-|100|0.54     |
-|200|0.55     |
+| k     | Accuracy |
+|-------|---------:|
+| 25    | 0.43     |
+| 50    | 0.51     |
+| 100   | 0.54     |
+| 200   | 0.55     |
 As we can see, this kernel seems to squeeze out a lot of performance from the SVM mechanism and consistently outperforms the simpler linear kernel. Indeed, this has been my top performer, with an astonishing 55% of accuracy at k=200. Notice the big jump in performance going from k=25 to k=50.
 4. Here are the results for the **soft-assigment** rule discussed at point 6, including a confusion matrix computed for k=50 visual words and normalized with respect to the true class.
 ![alt text](https://github.com/pigozzif/CVPR_2018_Final_Project/blob/master/images/soft50.png)
-|k  | Accuracy|
-|---|--------:|
-|25 |0.48     |
-|50 |0.45     |
-|100|0.47     |
-|200|0.51     |
+| k     | Accuracy |
+|-------|---------:|
+| 25    | 0.48     |
+| 50    | 0.45     |
+| 100   | 0.47     |
+| 200   | 0.51     |
 As we can see, this approach consistently outranks the linear SVM classifier in terms of performance (even if computing the kernel many times impacted the time of computation). In fact, this turned out to be the top performer for k=25 beyond any doubt, outpacing the chisquared kernel by 5 percentage points. As a result, we can conclude that the intuition behind allowing each descriptor to contribute to multiple bins in a distance-weighted fashion was a winning one. Interestingly enough, if we compare this confusion matrix with that for the linear SVM, we discover that this approach abandons the unwanted preference for predicting "bedroom". 
 5. Here are the results for the **spatial pyramid kernel** analyzed at point 7.
 
