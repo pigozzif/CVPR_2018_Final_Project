@@ -83,7 +83,9 @@ As we can see, even this solution seems to deliver pretty good performance. As e
 [Lazebnik et al., 2006] Lazebnik, S., Schmid, C., and Ponce, J. (2006). Beyond
 bags of features: Spatial pyramid matching for recognizing natural scene
 categories. In *null*, pages 2169–2178. IEEE.
+
 [Van Gemert et al., 2008] Van Gemert, J. C., Geusebroek, J.-M., Veenman,
 C. J., and Smeulders, A. W. (2008). Kernel codebooks for scene categorization. In *European conference on computer vision*, pages 696–709. Springer.
+
 [Zhang et al., 2007] Zhang, J., Marszałek, M., Lazebnik, S., and Schmid, C. (2007). Local features and kernels for classification of texture and object categories: A comprehensive study. In *International journal of computer vision*, 73(2):213–238.
 
