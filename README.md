@@ -60,7 +60,7 @@ As we can see, this kernel seems to squeeze out a lot of performance from the SV
 |200|0.51     |
 As we can see, this approach consistently outranks the linear SVM classifier in terms of performance (even if computing the kernel many times impacted the time of computation). In fact, this turned out to be the top performer for k=25 beyond any doubt, outpacing the chisquared kernel by 5 percentage points. As a result, we can conclude that the intuition behind allowing each descriptor to contribute to multiple bins in a distance-weighted fashion was a winning one. Interestingly enough, if we compare this confusion matrix with that for the linear SVM, we discover that this approach abandons the unwanted preference for predicting "bedroom". 
 5. Here are the results for the **spatial pyramid kernel** analyzed at point 7.
-|k  | Accuracy|
+|k   |Accuracy |
 |----|--------:|
 |25  |0.41     |
 |50  |0.46     |
